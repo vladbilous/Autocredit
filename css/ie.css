@@ -1,0 +1,79 @@
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .percent-block .circle-wrap {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+  }
+
+  footer form input {
+    margin-left: 50px !important;
+    float: right;
+  }
+
+  footer form button {
+    height: 75px;
+    min-height: 75px;
+    max-height: 75px;
+  }
+
+  #calculator form p:first-of-type {
+    margin-bottom: 40px;
+  }
+
+  #calculator form p.stavka {
+    margin-bottom: 40px;
+  }
+
+  .percent-block span.number {
+    font-size: 25px;
+  }
+}
+
+@media screen and (max-width: 700px), (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .liscence {
+    max-width: 93vw;
+  }
+
+  footer form {
+    margin-left: -10px;
+  }
+
+  footer form input {
+    margin-left: 10px !important;
+    margin-top: 10px;
+    margin-right: 10px;
+  }
+
+  form button {
+    margin-left: 20px;
+  }
+
+  #calculator form button {
+    margin-top: 15px;
+  }
+
+  .percent-block .circle-wrap {
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+  }
+
+  #calculator form label, #calculator form button, #calculator form option, #calculator form select {
+    margin-bottom: 10px;
+  }
+
+  #calculator form p:not(.stavka) {
+    margin-top: 10px;
+  }
+
+  p.stavka {
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+
+  #calculator {
+    margin: 15px 0;
+  }
+}

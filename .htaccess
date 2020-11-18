@@ -1,0 +1,6 @@
+Options +FollowSymLinks
+RewriteEngine On
+
+RewriteCond %{HTTP_HOST} ^www.grusevych\.com.ua$ [NC]
+RewriteRule ^(.*)$ http://grusevych.com.ua/$1 [R=301,L]
+

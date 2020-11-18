@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="author" content="Bilous Vlad">
+  <link rel="stylesheet" href="https://www.ukrgasbank.com/images/favicon.ico" rel="icon" type="image/x-icon">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="fonts/Circe/stylesheet.css">
+  <!-- boottstrup -->
+  <!-- подключение css-файла -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+  <!-- подключение нужной версии jQuery -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+  </script>
+  <!-- подключение js-файла -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous">
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="js/jquey.3.4.1.min.js"></script>
+  <script src="https://rawgit.com/kottenator/jquery-circle-progress/1.2.2/dist/circle-progress.js"></script>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/mobile.css">
+  <!-- boottstrup -->
+  <title>Autocredit</title>
+  <link rel="stylesheet" href="css/ie.css">
+</head>
+
+<body>
+  <header>
+    <img src="img/banner_autocredit.png" alt=""/>
+<!--    <div class="wrapper">-->
+<!--      <div class="header_logo">-->
+<!--        <img src="img\current-img\logo.png" alt="logo">-->
+<!--      </div>-->
+<!--      <div class="head_txt">-->
+<!--        <img class="key tablet" src="img\current-img\key_set.png" alt="key">-->
+<!--        <img class="car tablet" src="img\current-img\car.png" alt="car">-->
+<!--        <img class="mob" src="img\key_set_mob.png" alt="car">-->
+
+<!--      </div>-->
+<!--      <div class="head_list">-->
+<!--        <div class="head-list-item">-->
+<!--          <img src="img\current-img\yellow_icon1.png" alt="icon">-->
+<!--          <p>при власному внеску від <span>40%</span><br>вартості авто - без довідки про доходи</p>-->
+<!--        </div>-->
+<!--        <div class="head-list-item">-->
+<!--          <img src="img\current-img\yellow_icon2.png" alt="icon">-->
+<!--          <p>рішення за <span>2</span> години</p>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+  </header>
+  <div class="wrapper">
+    <div class="flex-container icons-container">
+      <div>
+        <img src="img\current-img\grey_icon1.svg" alt="gray-icon">
+        <h4><span>КРЕДИТ</span><br>до 1 500 000 грн</h4>
+      </div>
+      <div>
+        <img src="img\current-img\grey_icon2.svg" alt="gray-icon">
+        <h4><span>ПЕРВИННИЙ ВНЕСОК</span><br>від 20% вартості авто</h4>
+      </div>
+      <div>
+        <img src="img\current-img\grey_icon3.svg" alt="gray-icon">
+        <h4><span>ТЕРМІН КРЕДИТУ</span><br>до 7 років</h4>
+      </div>
+    </div>
+    <div id="calculator">
+      <form action="#">
+        <h2>Калькулятор</h2>
+        <div class="error"></div>
+        <p>
+          <label for="car-payment">Вартість автомобіля, грн</label>
+          <input type=" number" onkeyup="checkCurr(this); triadVartist() " name="car-payment" id="car-payment" value="1 000 000"></p>
+
+
+        <p style="display: none" class="stavka hidden">
+          <label>Ставка річних, %</label>
+          <span>0,01 %</span>
+          <p>
+            <label for="prepaid-expense">Аванс, грн</label>
+            <input type=" number" onkeyup="checkCurr(this); triadAvans()" name="prepaid-expense" id="prepaid-expense" value="600 000" maxlength="14"></p>
+          <p>
+            <label for="prepaid-expense">Сума кредиту, грн</label>
+            <input type=" number" name="credit-sum" id="credit-sum" value="400 000" readonly style="background: transparent;color: #1c3968;"></p>
+
+          <p style="display: none" class="hidden">
+            <label for="credit-type">Тип кредиту</label>
+            <select name="credit-type" id="credit-type">
+              <option value="Ануїтет" selected>Ануїтет</option>
+              <option value="Класика">Класика</option>
+            </select>
+          </p>
+          <p>
+            <label for="month-rate">Термін кредитування, <br>міс.</label>
+            <input type="number" id="month-rate" max="84" value="12" />
+          </p>
+          <!-- <button type="button">Розрахувати</button> -->
+      </form>
+      <div class="percent-block tab">
+        <div class="circle-wrap">
+          <div class="circle-1" data-size="190" data-thickness="15">
+            <span class="number">12</span>
+          </div>
+          <span>Ваш місячний платіж<sup>*</sup></span>
+
+          <div class="circle-2" data-size="190" data-thickness="15">
+            <span class="number">12</span>
+          </div>
+          <span>Разові витрати, <br>на користь банку<sup>1</sup><br></span>
+        </div>
+      </div>
+      <div class="percent-block mob">
+        <div class="circle-wrap">
+          <div>
+            <div class="circle-1" data-size="140" data-thickness="12">
+              <span class="number">12</span>
+            </div>
+            <span>Ваш місячний платіж<sup>*</sup></span>
+
+            <div class="circle-2" data-size="140" data-thickness="12">
+              <span class="number">12</span>
+            </div>
+            <span>Разові витрати, <br>на користь банку<br><sup>1</sup></span>
+          </div>
+        </div>
+      </div>
+      <p class="description"><br>1 - Без врахування витрат на послуги третіх осіб (страхування,<br>
+      нотаріальних послуг, послуг в органах реєстрації авто та інше)<br>*Розрахунок зроблений згідно програми кредитування Легкий старт<br>
+        *Розрахунок виконано по ануїтетному графіку погашення<br>*Для авто виробництва країн СНД, індійських та іранських марок<br>
+        максимальний термін кредитування до 5 років; <br> *Для клієнтів Східної регіональної
+        дирекції: максимальний термін <br> кредитування до 5 років та максимальна сума кредиту становить<br> 1 млн.
+        грн Також мінімальний внесок не менше 30% від вартості авто.
+      </p>
+      <div class="href-block">
+        <p class="href-block__text">
+          <a target="_blank" href="https://www.ukrgasbank.com/private/credits/auto_cred/autocredit" class="href-block__href">
+
+            Детальні умови у розрізі програм автокредитування
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <div class="block-itd">
+      <div class="block1-itd">
+        <table>
+          <tr>
+            <td><img src="img/current-img/grey_icon3.svg" alt=""/></td>
+            <td><p class="block-itd__title">максимальний термін кредитування - до 7 років </p></td>
+          </tr>
+        </table>
+        <p class="block-itd__descriptions">
+
+        </p>
+      </div>
+      <div class="block1-itd">
+        <table>
+          <tr>
+            <td><img src="img/current-img/grey_icon1.svg" alt=""/></td>
+            <td><p class="block-itd__title">максимальна сума кредитування – 1,5 млн грн  </p></td>
+          </tr>
+        </table>
+        <p class="block-itd__descriptions">
+          сума кредиту, більша 1 500 000 грн, погоджується індивідуально.
+        </p>
+      </div>
+      <div class="block1-itd">
+        <table>
+          <tr>
+            <td><img src="img/current-img/grey_icon2.svg" alt=""/></td>
+            <td><p class="block-itd__title">
+              реальна річна відсоткова ставка - 30,44%
+            </p></td>
+          </tr>
+        </table>
+        <p class="block-itd__descriptions">
+          включаючи платежі за додаткові і супутні послуги банку та третіх осіб, пов'язані з отриманням,
+          обслуговуванням і поверненням кредиту при вартості автомобіля 700 000 грн,
+          строку кредитуванні 24 місяці та власному  внеску 30%, схема погашення ануїтет становить (розрахунок зроблено станом на 29.07.2020р).
+          Реальна річна відсоткова ставка залежить від обраних клієнтом умов кредитування.
+
+        </p>
+      </div>
+      <p class="block-itd__descriptions">
+        Кредит надається у відділеннях АБ «УКРГАЗБАНК» по всій території України за винятком тимчасово окупованої території АР Крим та зони проведення ООС.
+        Банк залишає за собою право змінювати умови кредитування. Про детальні умови кредитування дізнавайтеся на
+        сайті www.ukrgasbank.com – розділ «Приватним клієнтам – Кредити – Автокредити - Кредити на придбання нових легкових автомобілів  -
+        Кредити на придбання нових легкових автомобілів за програмою «Авто в кредит все включено»  або за телефоном: 0 800 309 000 (дзвінки безкоштовні у межах України).
+      </p>
+    </div>
+
+
+
+
+
+
+    <div class="flex-container icons-container icons-container-bottom">
+      <div>
+        <img src="img/icon1.png" alt="gray-icon">
+        <a target="_blank" class="href-block__href" href="https://www.ukrgasbank.com/private/credits/autocredit/autocredit/ ">
+          <h4><span>КРЕДИТИ НА НОВІ АВТО
+          </span>
+          </h4>
+        </a>
+      </div>
+      <div>
+        <img src="img/icon2.png" alt="gray-icon">
+        <a target="_blank" class="href-block__href" href="https://www.ukrgasbank.com/private/credits/autocredit/auto_zast">
+          <h4><span>КРЕДИТИ НА АВТО У ЗАСТАВІ
+          </span></h4>
+        </a>
+      </div>
+      <div>
+        <img src="img/icon3.png" alt="gray-icon">
+        <a target="_blank" class="href-block__href" href="https://www.ukrgasbank.com/private/credits/autocredit/electro_gibrid_cred ">
+          <h4><span>КРЕДИТИ НА ЕЛЕКТРОМОБІЛІ
+          </span></h4>
+        </a>
+      </div>
+    </div>
+
+  </div>
+  <footer>
+    <div class="wrapper">
+      <div class="flex-container">
+        <div class="info">
+          <img class="car" src="img/car-footer.png" alt="green-car">
+        </div>
+        <form class="contact-form">
+          <span class="title-form">ПОДАТИ ЗАЯВКУ</span>
+          <br>
+          <p>
+
+            <input type="text" placeholder="Ім'я*" name="name">
+
+            <span class="span__block">
+            <input type="text" placeholder="Телефон*" name="phone">
+              <b class="contact-form__error"
+              >Неправильно вказаний телефон</b
+              >
+
+              </span>
+          </p>
+
+          <p class="form-row2">
+            <input type="text" placeholder="Email" name="email">
+            <b class="contact-form__error">Неправильно вказана пошта</b>
+            <input type="text" placeholder="Коментарі" name="comments">
+          </p>
+          <b class="contact-form__mandatory">*Обов’язкові поля</b>
+
+          <p class="contact-form__check-box">
+            <input type="checkbox" name="option4" value="a4">
+            <span class="contact-form__data-title">
+                     Я даю згоду на обробку та використання<Br>
+                    моїх персональних даних
+                  </span>
+          </p>
+<!--          <button>Відправити</button>-->
+
+          <div class="contacts-form__submit-wrap">
+            <button class="contacts-form__submit-btn" type="submit">
+              Відправити
+            </button>
+            <p class="contacts-form__status-message">
+              Дякуємо за заявку. Ми зв'яжемося з Вами найближчим часом.
+            </p>
+          </div>
+        </form>
+
+
+      </div>
+      <div class="liscence">
+        <div>
+          <p>Максимальний термін кредитування - 84 місяці, максимальна сума кредитування – 1 500 000 грн (сума кредиту, більша 1 500 000 грн, погоджується індивідуально).
+
+          </p>
+          <p>Реальна ефективна відсоткова ставка становить від 4,78% до 14,64% річних і залежить від обраних споживачем умов кредитування.
+
+          </p>
+          <p>Кредит надається у відділеннях Банку по всій території України за винятком тимчасово окупованої території АР Крим та зони проведення АТО.
+
+          </p>
+          <p>Банк залишає за собою право змінювати умови кредитування. Про детальні умови кредитування дізнавайтеся на сайті www.ukrgasbank.com
+          </p>
+        </div>
+        <div class="footer-right">
+          <p class="politics"><a href="https://www.ukrgasbank.com/confidence">Політика конфіденційності</a></p>
+          <p>Ліцензія НБУ № 123 від 06.10.2011 року </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="js/circle-animation.js"></script>
+  <script src="js/jqeury.validate.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

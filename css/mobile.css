@@ -1,0 +1,433 @@
+@media (max-width: 1000px) {
+  :root {
+    --inner-top: 30px;
+    --main-wrap: 20px;
+    --inner-wrap: 0px;
+    --input-margin: 20px;
+    --ft-sz: 20px;
+  }
+  #calculator .description {
+    bottom: 30px;
+  }
+
+  .href-block__text {
+    width: fit-content;
+    height: auto;
+  }
+
+  .header_logo img .icons-container {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+
+  .header_logo img {
+    max-width: 600px;
+  }
+
+  .head_list {
+    margin-top: 0;
+  }
+
+  .head_txt {
+    margin-top: 2rem;
+  }
+
+  .head_list p {
+    font-size: 16px;
+  }
+
+  .head_list img {
+    width: 99px;
+    height: 90px;
+  }
+
+  .icons-container>div {
+    margin: 0 auto;
+    margin-top: 1rem;
+  }
+
+  .wrapper {
+    padding: 0px 20px;
+  }
+
+  .mob {
+    display: flex;
+  }
+
+  .tab {
+    display: none;
+  }
+
+  html {
+    overflow-x: hidden;
+  }
+
+  header img {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .icons-container {
+    margin-top: 30px;
+  }
+
+  .icons-container img {
+    width: 70%;
+  }
+
+  .icons-container h4 {
+    margin-top: 15px;
+    text-transform: lowercase;
+  }
+
+  p.politics {
+    font-size: 0.7rem;
+    margin-bottom: 10px !important;
+  }
+
+  .footer-right {
+    margin-top: 20px;
+  }
+
+  .percent-block.mob {
+    display: block;
+    width: 100%;
+    height: auto;
+    position: relative;
+    left: 0px;
+  }
+
+  .percent-block.mob .circle-wrap {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+  }
+
+  .flex-container span.span__block {
+    width: auto;
+  }
+
+  footer .flex-container {
+    padding: 0 10px;
+  }
+
+  #calculator .description {
+    text-align: left;
+    position: relative;
+    margin-left: 5px;
+    margin-top: 1rem;
+    font-size: 0.7rem;
+    max-width: calc(100vw - 20px);
+    left: 0px;
+  }
+
+  #calculator {
+    flex-direction: column;
+    margin: 30px 0;
+    padding: 10px 0 53px;
+  }
+
+  #calculator form {
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+  }
+
+  #calculator form h2 {
+    font-size: 2rem;
+    margin: .5rem 0;
+  }
+
+  #calculator form input {
+    margin-bottom: 15px;
+  }
+
+  #calculator form select, #calculator form option {
+    background: #fff !important;
+  }
+
+  #calculator form p:not(.stavka) {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+    height: auto;
+    margin-bottom: var(--input-margin);
+  }
+
+  #calculator form p.stavka {
+    margin-bottom: var(--input-margin);
+    max-width: 100%;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 5px;
+  }
+
+  #calculator form p.stavka label {
+    width: 50%;
+    max-width: 50%;
+    margin-bottom: 0px;
+  }
+
+  #calculator form p.stavka span {
+    width: 90px;
+    text-align: right;
+    padding-left: .5rem;
+  }
+
+  #calculator form label,
+  #calculator form input,
+  #calculator form button,
+  #calculator form option,
+  #calculator form select {
+    width: 100%;
+    max-width: 100%;
+    margin: 0px;
+    margin-top: 0px;
+    padding-top: 0px;
+    display: block;
+  }
+
+  #calculator form input, #calculator form option, #calculator form select {
+    height: 50px;
+    padding-top: 13px;
+  }
+
+  #calculator form label,
+  #calculator form button,
+  #calculator form option,
+  #calculator form select {
+    margin-bottom: var(--input-margin);
+  }
+
+  #calculator form button {
+    padding-top: 8px;
+    height: 42px;
+  }
+
+  footer {
+    /*max-height: 1000px;*/
+    overflow: hidden;
+    padding: 10px 0;
+  }
+
+  .info img {
+    position: relative;
+    width: 80%;
+    max-width: 500px;
+    display: block;
+    margin: 0 auto;
+    top: 0;
+  }
+
+  footer .flex-container {
+    flex-direction: column;
+  }
+
+  footer .info {
+    margin-right: 0px;
+    width: 100%;
+    min-width: 100%;
+    padding-top: 20px;
+    padding-bottom: 10px;
+  }
+
+  footer h3 {
+    margin-bottom: 0px;
+  }
+
+  footer form {
+    margin: 0 auto;
+    min-width: 100%;
+    width: 100%;
+  }
+
+  footer form button {
+    padding-top: 8px;
+    margin: 0 auto;
+    width: 94%;
+    margin-top: 40px;
+  }
+
+  footer form p {
+    height: auto;
+    flex-direction: column;
+    margin-bottom: 0px;
+  }
+
+  footer form input {
+    /*width: 100%;*/
+    max-width: 100%;
+    margin-bottom: var(--input-margin);
+    height: 50px;
+  }
+
+  footer form input {
+    width: auto;
+  }
+
+  footer form {
+    margin-left: 0!important;
+  }
+
+  form button {
+    padding: 0.5rem 2rem;
+  }
+
+  footer .liscence {
+    color: #C6C6C6;
+    font-size: 0.5rem;
+    line-height: 1em;
+    margin-top: 15px;
+    margin-bottom: 5px;
+  }
+
+  footer .liscence {
+    bottom: 0;
+    margin-bottom: 0px;
+    max-width: calc(100% - 20px);
+    margin: 0 auto;
+    margin-top: 2.5rem;
+  }
+
+  footer .liscence p {
+    margin-bottom: 5px;
+  }
+
+  .percent-block .circle-2 {
+    margin-top: 2rem;
+  }
+
+  footer form .contact-form__check-box {
+    flex-direction: inherit;
+  }
+
+  .href-block__text {
+
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --inner-top: 20px;
+    --main-wrap: 15px;
+    --inner-wrap: 0px;
+    --input-margin: 15px;
+    --ft-sz: 20px;
+  }
+
+  .wrapper {
+    padding: 0px 15px;
+  }
+
+  footer form button {
+    margin-left: 10px;
+  }
+
+  .icons-container {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+
+  .block1-itd td img {
+    width: 40px;
+  }
+
+  .block1-itd .block-itd__title {
+    font-size: 15px;
+    margin-left: 16px;
+  }
+
+  .block-itd .block-itd__descriptions {
+    font-size: 13px;
+    line-height: normal;
+    margin-top: 5px;
+  }
+  .block-itd {
+    padding: 0px 0;
+  }
+
+}
+
+@media (max-width: 500px) {
+  footer .liscence {
+    margin-left: 10px;
+  }
+
+  .percent-block.mob {
+    padding: 25px 10px;
+  }
+
+  .percent-block.mob .circle-wrap div {
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    text-align: center;
+    -ms-align-items: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .percent-block.mob .circle-wrap div:nth-of-type(2) {
+    margin-top: 10px;
+  }
+
+  .percent-block.mob .circle-wrap div {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+  }
+
+  .percent-block.mob .circle-wrap .circle-1,
+  .percent-block.mob .circle-wrap .circle-2 {
+    max-width: 60%;
+    width: 60%;
+    margin-right: 5px;
+  }
+
+  .percent-block.mob .circle-wrap span {
+    padding-top: 30px;
+  }
+
+  .percent-block.mob .circle-wrap span.number {
+    padding-top: 15px;
+  }
+
+  .icons-container div {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .icons-container h4 {
+    margin-top: 0px;
+    margin-bottom: 5px;
+  }
+
+  button {
+    text-align: center !important;
+  }
+}
+
+/*# sourceMappingURL=mobile.css.map */
